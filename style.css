@@ -82,7 +82,8 @@ body > div {
 }
 
 #event-description > button.event-list-item:hover {
-    text-decoration: underline;
+    background-color: #a9a9a9;
+    cursor: pointer;
 }
 
 
