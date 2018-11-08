@@ -34,6 +34,7 @@ for (let eventName in events) {
     event.marker.on('click', () => {
         document.getElementById('event-name').innerHTML = event.title;
         document.getElementById('event-description').innerHTML = event.parsedDescription;
+        map.flyTo([event.latitude, event.longitude]);
     });
 
     // Display popup when marker is hovered over
