@@ -1,13 +1,31 @@
+/* General */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html, body {
-    height:100%;
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
 }
 
-#map {
+body > div {
     height: 100%;
+}
+
+
+/* Sidebar */
+#sidebar {
+    background-color: #a9a9a9;
+    max-width: 800px;
+    min-width: 300px;
+    width: 30%;
+}
+
+
+/* Map */
+#map {
+    flex: 1;
 }
