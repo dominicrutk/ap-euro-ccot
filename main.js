@@ -19,7 +19,7 @@ const goBack = function () {
     document.getElementById('event-name').innerHTML = 'Event Selection';
     let eventsList = '';
     for (let event of sidebarEvents) {
-        eventsList += `<p class="event-list-item">${event.title}</p>`;
+        eventsList += `<button class="event-list-item">${event.title}</button>`;
     }
     document.getElementById('event-description').innerHTML = eventsList;
     map.flyTo([52.516278, 13.377683], 4);
