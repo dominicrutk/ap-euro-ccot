@@ -38,8 +38,28 @@ body > div {
 #event-description {
     background-color: #cccccc;
     flex: 1;
+    font-size: 16px;
     text-align: left;
     overflow-y: scroll;
+}
+
+#event-description > p, #event-description > figure {
+    margin-bottom: 14px;
+}
+
+#event-description > p:last-child, #event-description > figure:last-child {
+    margin-bottom: 0;
+}
+
+#event-description > figure > img {
+    display: block;
+    width: 100%;
+}
+
+#event-description > figure > figcaption {
+    font-size: 14px;
+    margin-top: 2px;
+    text-align: center;
 }
 
 
