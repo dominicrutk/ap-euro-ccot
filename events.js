@@ -12,7 +12,7 @@ const events = {
             },
             {
                 type: "p",
-                text: "This is aanother paragraph."
+                text: "This is another paragraph."
             },
             {
                 type: "p",

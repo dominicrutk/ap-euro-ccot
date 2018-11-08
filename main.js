@@ -12,11 +12,14 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 // Marker initialization
 for (let eventName in events) {
+    // Display marker on map
     let event = events[eventName];
     event.marker = L.marker([event.latitude, event.longitude]).addTo(map);
-    event.marker.addEventListener('click', () => {
+
+    // Display event info when marker is clicked
+    event.marker.on('click', () => {
         // Parse event title
-        let date = ' (' + (event.endYear - event.startYear === 0 ? event.endYear : event.startYear + '-' + event.endYear) + ')';
+        let date = ` (${event.startYear}` + (event.startYear !== event.endYear ? `-${event.endYear}` : '') + ')';
         document.getElementById('event-name').innerHTML = event.name + date;
         // Parse event description
         let eventDescription = '';
@@ -28,5 +31,16 @@ for (let eventName in events) {
             }
         }
         document.getElementById('event-description').innerHTML = eventDescription;
+    });
+
+    // Display popup when marker is hovered over
+    event.marker.bindPopup(event.name + ` (${event.startYear}` + (event.startYear !== event.endYear ? `-${event.endYear}` : '') + ')', {
+        closeButton: false
+    });
+    event.marker.on('mouseover', () => {
+       event.marker.openPopup();
+    });
+    event.marker.on('mouseout', () => {
+        event.marker.closePopup();
     });
 }
