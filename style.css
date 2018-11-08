@@ -35,6 +35,16 @@ body > div {
     text-align: center;
 }
 
+#back-button {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+#back-button:hover {
+    color: #800080;
+    cursor: pointer;
+}
+
 #event-description {
     background-color: #cccccc;
     flex: 1;
