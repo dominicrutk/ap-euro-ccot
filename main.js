@@ -14,4 +14,9 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 for (let eventName in events) {
     let event = events[eventName];
     event.marker = L.marker([event.latitude, event.longitude]).addTo(map);
+    event.marker.addEventListener('click', () => {
+        // Parse event title
+        let date = ' (' + (event.endYear - event.startYear === 0 ? event.endYear : event.startYear + '-' + event.endYear) + ')';
+        document.getElementById('event-name').innerHTML = event.name + date;
+    });
 }

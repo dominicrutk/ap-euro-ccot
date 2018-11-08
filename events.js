@@ -2,7 +2,7 @@ const events = {
     event1: {
         name: "Event 1",
         startYear: 2018,
-        endYear: 2018,
+        endYear: 2019,
         latitude: 0.0,
         longitude: 0.0,
         description: [
