@@ -48,3 +48,14 @@ for (let eventName in events) {
         event.marker.closePopup();
     });
 }
+
+function updateMap(criteria) {
+    for (let eventName in events) {
+        let event = events[eventName];
+        if (criteria(event.category)) {
+            event.marker.addTo(map);
+        } else {
+            event.marker.removeFrom(map);
+        }
+    }
+}
