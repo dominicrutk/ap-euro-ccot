@@ -11,4 +11,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(map);
 
 // Marker initialization
-console.log(events);
+for (let eventName in events) {
+    let event = events[eventName];
+    event.marker = L.marker([event.latitude, event.longitude]).addTo(map);
+}
