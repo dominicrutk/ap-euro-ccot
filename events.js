@@ -5,6 +5,7 @@ const events = {
         endYear: 2019,
         latitude: 0.0,
         longitude: 0.0,
+        category: "continuity-continuity1",
         description: [
             {
                 type: "p",
@@ -35,6 +36,7 @@ const events = {
         endYear: 2018,
         latitude: 10.0,
         longitude: 10.0,
+        category: "change-change1",
         description: [
             {
                 type: "p",

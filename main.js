@@ -12,29 +12,32 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 // Marker initialization
 for (let eventName in events) {
-    // Display marker on map
     let event = events[eventName];
+
+    // Parse event title (name + date)
+    event.title = `${event.name} (${event.startYear}` + (event.startYear !== event.endYear ? `-${event.endYear}` : '') + ')';
+
+    // Parse event description (paragraphs + images + captions)
+    event.parsedDescription = '';
+    for (let element of event.description) {
+        if (element.type === 'p') {
+            event.parsedDescription += `<p>${element.text}</p>`;
+        } else if (element.type === 'img') {
+            event.parsedDescription += `<figure><img src="${element.image}" alt="The image failed to load."><figcaption>${element.caption}</figcaption></figure>`;
+        }
+    }
+
+    // Display marker on map
     event.marker = L.marker([event.latitude, event.longitude]).addTo(map);
 
     // Display event info when marker is clicked
     event.marker.on('click', () => {
-        // Parse event title
-        let date = ` (${event.startYear}` + (event.startYear !== event.endYear ? `-${event.endYear}` : '') + ')';
-        document.getElementById('event-name').innerHTML = event.name + date;
-        // Parse event description
-        let eventDescription = '';
-        for (let element of event.description) {
-            if (element.type === 'p') {
-                eventDescription += `<p>${element.text}</p>`;
-            } else if (element.type === 'img') {
-                eventDescription += `<figure><img src="${element.image}" alt="The image failed to load."><figcaption>${element.caption}</figcaption></figure>`;
-            }
-        }
-        document.getElementById('event-description').innerHTML = eventDescription;
+        document.getElementById('event-name').innerHTML = event.title;
+        document.getElementById('event-description').innerHTML = event.parsedDescription;
     });
 
     // Display popup when marker is hovered over
-    event.marker.bindPopup(event.name + ` (${event.startYear}` + (event.startYear !== event.endYear ? `-${event.endYear}` : '') + ')', {
+    event.marker.bindPopup(event.title, {
         closeButton: false
     });
     event.marker.on('mouseover', () => {
