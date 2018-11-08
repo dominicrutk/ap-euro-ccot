@@ -1,13 +1,69 @@
+/* General */
 * {
     box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-html, body {
-    height:100%;
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
 }
 
-#map {
+body > div {
     height: 100%;
+}
+
+
+/* Sidebar */
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    min-width: 300px;
+    width: 30%;
+}
+
+.sidebar-content {
+    padding: 14px;
+}
+
+.sidebar-header {
+    background-color: #a9a9a9;
+    text-align: center;
+}
+
+#event-description {
+    background-color: #cccccc;
+    flex: 1;
+    font-size: 16px;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+#event-description > p, #event-description > figure {
+    margin-bottom: 14px;
+}
+
+#event-description > p:last-child, #event-description > figure:last-child {
+    margin-bottom: 0;
+}
+
+#event-description > figure > img {
+    display: block;
+    width: 100%;
+}
+
+#event-description > figure > figcaption {
+    font-size: 14px;
+    margin-top: 2px;
+    text-align: center;
+}
+
+
+/* Map */
+#map {
+    flex: 1;
 }
