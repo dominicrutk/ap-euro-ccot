@@ -11,9 +11,21 @@ const events = {
                 text: "This is a paragraph."
             },
             {
+                type: "p",
+                text: "This is aanother paragraph."
+            },
+            {
+                type: "p",
+                text: "This is a paragraph."
+            },
+            {
                 type: "img",
-                image: "path/to/image",
+                image: "https://www.history.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_768/MTU3ODc5MDg2NDI5Nzc1MTc3/antonio-de-pereda-thirty-years-war.jpg",
                 caption: "This is a caption for the image."
+            },
+            {
+                type: "p",
+                text: "This is the last paragraph."
             }
         ]
     },
@@ -30,7 +42,7 @@ const events = {
             },
             {
                 type: "img",
-                image: "path/to/image",
+                image: "https://www.history.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_768/MTU3ODc5MDg2NDI5Nzc1MTc3/antonio-de-pereda-thirty-years-war.jpg",
                 caption: "This is a caption for the image."
             }
         ]

@@ -18,5 +18,15 @@ for (let eventName in events) {
         // Parse event title
         let date = ' (' + (event.endYear - event.startYear === 0 ? event.endYear : event.startYear + '-' + event.endYear) + ')';
         document.getElementById('event-name').innerHTML = event.name + date;
+        // Parse event description
+        let eventDescription = '';
+        for (let element of event.description) {
+            if (element.type === 'p') {
+                eventDescription += `<p>${element.text}</p>`;
+            } else if (element.type === 'img') {
+                eventDescription += `<figure><img src="${element.image}" alt="The image failed to load."><figcaption>${element.caption}</figcaption></figure>`;
+            }
+        }
+        document.getElementById('event-description').innerHTML = eventDescription;
     });
 }
