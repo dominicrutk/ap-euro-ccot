@@ -1,4 +1,5 @@
 let sidebarEventOpen = false;
+let sidebarEvents = [];
 
 // Map initialization
 const map = L.map('map', {
@@ -16,23 +17,8 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 const goBack = function () {
     sidebarEventOpen = false;
     document.getElementById('event-name').innerHTML = 'Event Selection';
-    let eventsSortingList = [];
-    for (let eventName in events) {
-        let event = events[eventName];
-        eventsSortingList.push(event);
-    }
-    eventsSortingList.sort((a, b) => {
-        if (a.startYear !== b.startYear) {
-            return a.startYear - b.startYear;
-        } else if (a.endYear !== b.endYear) {
-            return a.endYear - b.endYear;
-        } else {
-            return a.name - b.name;
-        }
-    });
-    console.log(eventsSortingList);
     let eventsList = '';
-    for (let event of eventsSortingList) {
+    for (let event of sidebarEvents) {
         eventsList += `<p class="event-list-item">${event.title}</p>`;
     }
     document.getElementById('event-description').innerHTML = eventsList;
@@ -79,6 +65,8 @@ for (let eventName in events) {
     event.marker.on('mouseout', () => {
         event.marker.closePopup();
     });
+
+    sidebarEvents.push(event);
 }
 
 function updateMap(criteria) {
@@ -91,3 +79,5 @@ function updateMap(criteria) {
         }
     }
 }
+
+goBack();
