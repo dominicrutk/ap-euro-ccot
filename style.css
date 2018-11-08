@@ -35,6 +35,10 @@ body > div {
     text-align: center;
 }
 
+.event-list-item {
+    background-color: orange;
+}
+
 #back-button {
     color: #0000ff;
     text-decoration: underline;

@@ -15,7 +15,27 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 // Go back event handler
 const goBack = function () {
     sidebarEventOpen = false;
-    // Go to list of events
+    document.getElementById('event-name').innerHTML = 'Event Selection';
+    let eventsSortingList = [];
+    for (let eventName in events) {
+        let event = events[eventName];
+        eventsSortingList.push(event);
+    }
+    eventsSortingList.sort((a, b) => {
+        if (a.startYear !== b.startYear) {
+            return a.startYear - b.startYear;
+        } else if (a.endYear !== b.endYear) {
+            return a.endYear - b.endYear;
+        } else {
+            return a.name - b.name;
+        }
+    });
+    console.log(eventsSortingList);
+    let eventsList = '';
+    for (let event of eventsSortingList) {
+        eventsList += `<p class="event-list-item">${event.title}</p>`;
+    }
+    document.getElementById('event-description').innerHTML = eventsList;
     map.flyTo([52.516278, 13.377683], 4);
 };
 
