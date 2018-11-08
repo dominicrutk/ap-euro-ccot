@@ -1,5 +1,5 @@
 // Map initialization
-let map = L.map('map', {
+const map = L.map('map', {
     center: [52.516278, 13.377683],
     zoom: 4
 });
@@ -9,3 +9,6 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiZG9taW5pY3J1dGtvd3NraSIsImEiOiJjam83dzNkY2EwMnY3M3FwMGE3b281MjNvIn0.6gd3c6kSnu3bd8gaQdck-Q'
 }).addTo(map);
+
+// Marker initialization
+console.log(events);
