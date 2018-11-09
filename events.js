@@ -144,6 +144,20 @@ const events = {
             }
         ]
     },
+    edictOfFontainebleau: {
+        name: 'Edict of Fontainebleau',
+        startYear: 1685,
+        endYear: 1685,
+        latitude: 48.804810,
+        longitude: 2.120471,
+        category: 'change',
+        description: [
+            {
+                type: 'p',
+                text: 'In 1685, King Louis XIV of France repealed the Edict of Nantes with the Edict of Fontainebleau. Huguenots (French Protestants) lost their right to practice Protestantism without persecution from the government. They were forced to flee, and the Protestant minority that had peacefully resided in France for decades suddenly declined. Louis repealed the Edict of Nantes in the name of political unity. It was a prime example of political absolutism at work since the strong monarchy took power away from local governments and peoples.'
+            }
+        ]
+    },
     americanRevolution: {
         name: 'American Revolution',
         startYear: 1765,
