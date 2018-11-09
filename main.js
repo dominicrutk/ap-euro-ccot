@@ -31,7 +31,15 @@ const goToEvent = function (eventTitle) {
 const goBack = function () {
     sidebarEventOpen = false;
     document.getElementById('event-name').innerHTML = 'Event Selection';
-    let eventsList = '';
+    let eventsList = `<p>Show these events: <select id="filter">
+        <option value="all">All</option>
+        <option value="continuities">Continuities</option>
+        <option value="changes">Changes</option>
+        <option value="15th">15th Century</option>
+        <option value="16th">16th Century</option>
+        <option value="17th">17th Century</option>
+        <option value="18th">18th Century</option>
+    </select></p>`;
     for (let event of sidebarEvents) {
         eventsList += `<button class="event-list-item">${event.title}</button>`;
     }
