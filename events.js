@@ -63,5 +63,24 @@ const events = {
                 caption: 'The Peace of Westphalia gave each local prince the power to choose the religion of their domain, thus greatly strengthening the nobility at the expense of the Holy Roman Emperor. <a href="http://www.wikiwand.com/en/Holy_Roman_Empire">Image source</a>'
             }
         ]
+    },
+    observationsUponExperimentalPhilosophy: {
+        name: 'Observations upon Experimental Philosophy',
+        startYear: 1666,
+        endYear: 1666,
+        latitude: 54.966667,
+        longitude: -1.6,
+        category: 'continuity',
+        description: [
+            {
+                type: 'p',
+                text: 'Margaret Cavendish, Duchess of Newcastle-upon-Tyne, published <em>Observations upon Experimental Philosophy</em> in 1666. She was one of the only female philosophers of her era. For the most part, women were totally excluded from intellectual pursuits until the late 19<sup>th</sup> century. Cavendish was the exception to this rule. In 1667, she became the first woman that was allowed to attend a meeting of the Royal Society of London.'
+            },
+            {
+                type: 'img',
+                image: './img/margaretCavendish.jpg',
+                caption: `Cavendish was probably only able to achieve what she could as a woman because she was part of the nobility. A layperson could not reach her status. <a href="https://en.wikipedia.org/wiki/Margaret_Cavendish,_Duchess_of_Newcastle-upon-Tyne">Image source</a>`
+            }
+        ]
     }
 };
