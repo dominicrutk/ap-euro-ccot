@@ -82,5 +82,24 @@ const events = {
                 caption: `Cavendish was probably only able to achieve what she could as a woman because she was part of the nobility. A layperson could not reach her status. <a href="https://en.wikipedia.org/wiki/Margaret_Cavendish,_Duchess_of_Newcastle-upon-Tyne">Image source</a>`
             }
         ]
+    },
+    pugachevsRebellion: {
+        name: `Pugachev's Rebellion`,
+        startYear: 1773,
+        endYear: 1775,
+        latitude: 51.7667,
+        longitude: 55.1,
+        category: 'continuity',
+        description: [
+            {
+                type: 'p',
+                text: `From 1773 to 1775, a Russian serf by the name of Yemelyan Pugachev orchestrated a massive rebellion of Russian serfs against their masters. For three years, southern Russia descended into turmoil. Peasants rose up violently, feeling that they were being treated unfairly by their masters. However, in 1775, the rebellion was mercilessly crushed by the Russian monarchy. Although Pugachev's Rebellion inspired similar, smaller peasant rebellions across Eastern Europe, its true significance was that it demonstrated that peasant life did not change much at all over this era. Life as a peasant was so miserable that peasants felt a constant urge to rebel against their masters.`
+            },
+            {
+                type: 'img',
+                image: './img/pugachevsRebellion.jpg',
+                caption: `A depiction of serfs rebelling against their master during Pugachev's Rebellion. <a href="https://www.rbth.com/history/326277-5-questions-about-pugachevs-rebellion">Image source</a>`
+            }
+        ]
     }
 };
