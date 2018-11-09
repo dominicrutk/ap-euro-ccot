@@ -2,6 +2,20 @@ let sidebarEventOpen = false;
 let sidebarEvents = [];
 let filter = 'all';
 
+function passesFilter(event) {
+    if (filter === 'all') {
+        return true;
+    } else if (filter === 'continuities') {
+        return event.category.includes('continuities');
+    } else if (filter === 'changes') {
+        return event.category.includes('changes');
+    } else {
+        const startYear = 100 * Number(filter.substring(0, 2)) - 100;
+        const endYear = 100 * Number(filter.substring(0, 2));
+        return event.startYear <= endYear && event.endYear > startYear && event.startYear <= event.endYear;
+    }
+}
+
 // Map initialization
 const map = L.map('map', {
     center: [52.516278, 13.377683],
