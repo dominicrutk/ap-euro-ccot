@@ -13,6 +13,20 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoiZG9taW5pY3J1dGtvd3NraSIsImEiOiJjam83dzNkY2EwMnY3M3FwMGE3b281MjNvIn0.6gd3c6kSnu3bd8gaQdck-Q'
 }).addTo(map);
 
+const goToEvent = function (eventTitle) {
+    for (let eventName in events) {
+        let event = events[eventName];
+        if (event.title === eventTitle) {
+            document.getElementById('event-name').innerHTML = event.title;
+            document.getElementById('event-description').innerHTML = event.parsedDescription;
+            document.getElementById('back-button').addEventListener('click', goBack);
+            map.flyTo([event.latitude, event.longitude]);
+            sidebarEventOpen = true;
+            break;
+        }
+    }
+};
+
 // Go back event handler
 const goBack = function () {
     sidebarEventOpen = false;
@@ -22,6 +36,11 @@ const goBack = function () {
         eventsList += `<button class="event-list-item">${event.title}</button>`;
     }
     document.getElementById('event-description').innerHTML = eventsList;
+    document.querySelectorAll('#event-description > button.event-list-item').forEach(element => {
+        element.addEventListener('click', () => {
+            goToEvent(element.innerHTML);
+        });
+    });
     map.flyTo([52.516278, 13.377683], 4);
 };
 
@@ -47,12 +66,7 @@ for (let eventName in events) {
 
     // Display event info when marker is clicked
     event.marker.on('click', () => {
-        document.getElementById('event-name').innerHTML = event.title;
-        document.getElementById('event-description').innerHTML = event.parsedDescription;
-        // Attach event listener to going back from event details to event list
-        document.getElementById('back-button').addEventListener('click', goBack);
-        map.flyTo([event.latitude, event.longitude]);
-        sidebarEventOpen = true;
+        goToEvent(event.title);
     });
 
     // Display popup when marker is hovered over
