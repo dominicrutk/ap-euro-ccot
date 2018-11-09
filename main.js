@@ -6,9 +6,9 @@ function passesFilter(event) {
     if (filter === 'all') {
         return true;
     } else if (filter === 'continuities') {
-        return event.category.includes('continuities');
+        return event.category.includes('continuity');
     } else if (filter === 'changes') {
-        return event.category.includes('changes');
+        return event.category.includes('change');
     } else {
         const startYear = 100 * Number(filter.substring(0, 2)) - 100;
         const endYear = 100 * Number(filter.substring(0, 2));
@@ -34,7 +34,9 @@ const goToEvent = function (eventTitle) {
         if (event.title === eventTitle) {
             document.getElementById('event-name').innerHTML = event.title;
             document.getElementById('event-description').innerHTML = event.parsedDescription;
-            document.getElementById('back-button').addEventListener('click', goBack);
+            document.getElementById('back-button').addEventListener('click', () => {
+                goBack(true);
+            });
             map.flyTo([event.latitude, event.longitude], 6);
             sidebarEventOpen = true;
             break;
@@ -43,20 +45,22 @@ const goToEvent = function (eventTitle) {
 };
 
 // Go back event handler
-const goBack = function () {
+const goBack = function (flyToEurope) {
     sidebarEventOpen = false;
     document.getElementById('event-name').innerHTML = 'Event Selection';
     let eventsList = `<p>Show these events: <select id="filter">
-        <option value="all">All</option>
-        <option value="continuities">Continuities</option>
-        <option value="changes">Changes</option>
-        <option value="15th">15th Century</option>
-        <option value="16th">16th Century</option>
-        <option value="17th">17th Century</option>
-        <option value="18th">18th Century</option>
+        <option value="all" ${filter === 'all' ? 'selected' : ''}>All</option>
+        <option value="continuities" ${filter === 'continuities' ? 'selected' : ''}>Continuities</option>
+        <option value="changes" ${filter === 'changes' ? 'selected' : ''}>Changes</option>
+        <option value="15th" ${filter === '15th' ? 'selected' : ''}>15th Century</option>
+        <option value="16th" ${filter === '16th' ? 'selected' : ''}>16th Century</option>
+        <option value="17th" ${filter === '17th' ? 'selected' : ''}>17th Century</option>
+        <option value="18th" ${filter === '18th' ? 'selected' : ''}>18th Century</option>
     </select></p>`;
     for (let event of sidebarEvents) {
-        eventsList += `<button class="event-list-item">${event.title}</button>`;
+        if (passesFilter(event)) {
+            eventsList += `<button class="event-list-item">${event.title}</button>`;
+        }
     }
     document.getElementById('event-description').innerHTML = eventsList;
     document.querySelectorAll('#event-description > button.event-list-item').forEach(element => {
@@ -67,9 +71,11 @@ const goBack = function () {
     const filterSelect = document.getElementById('filter');
     filterSelect.addEventListener('change', () => {
         filter = filterSelect.options[filterSelect.selectedIndex].value;
-        console.log(filter);
+        goBack(false);
     });
-    map.flyTo([52.516278, 13.377683], 4);
+    if (flyToEurope) {
+        map.flyTo([52.516278, 13.377683], 4);
+    }
 };
 
 // Marker initialization
@@ -111,4 +117,4 @@ for (let eventName in events) {
     sidebarEvents.push(event);
 }
 
-goBack();
+goBack(true);

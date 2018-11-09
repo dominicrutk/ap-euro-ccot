@@ -1,11 +1,11 @@
 const events = {
     event1: {
         name: "Event 1",
-        startYear: 2018,
-        endYear: 2019,
+        startYear: 1599,
+        endYear: 1600,
         latitude: 0.0,
         longitude: 0.0,
-        category: "continuity-continuity1",
+        category: "continuity",
         description: [
             {
                 type: "p",
@@ -32,11 +32,11 @@ const events = {
     },
     event2: {
         name: "Event 2",
-        startYear: 2018,
-        endYear: 2018,
+        startYear: 1618,
+        endYear: 1648,
         latitude: 10.0,
         longitude: 10.0,
-        category: "change-change1",
+        category: "change",
         description: [
             {
                 type: "p",
