@@ -41,6 +41,29 @@ const events = {
             }
         ]
     },
+    transatlanticSlaveTrade: {
+        name: 'Transatlantic Slave Trade',
+        startYear: 1526,
+        endYear: 1814,
+        latitude: 13.441243,
+        longitude: -16.719776,
+        category: 'continuity',
+        description: [
+            {
+                type: 'p',
+                text: 'The transatlantic slave trade began in the late 16<sup>th</sup> century and ended in the early 19<sup>th</sup> century. It entailed the shipment of slaves from coastal African countries to plantations in the New World, especially in Brazil and the West Indies. In one major trade route, known as "triangular trade", African slaves were exported to the West Indies or Brazil to work on plantations. Then, raw materials were shipped from the plantations to New England or Europe, where they would be converted into manufactured goods, especially firearms, that were shipped back to Africa, thus starting the cycle over again.'
+            },
+            {
+                type: 'img',
+                image: './img/triangularTrade.png',
+                caption: 'An image depicting the triangular trade route. <a href="https://en.wikipedia.org/wiki/Triangular_trade">Image source</a>'
+            },
+            {
+                type: 'p',
+                text: `The transatlantic slave trade had a profound impact on the economies and social hierarchies of Europe, Africa, and the New World. In the New World, plantation economies were dependent on the slave trade. In Europe, the slave trade led to a dramatic increase in wealth which allowed for innovation and an increase in quality of life. In Africa, the slave trade set a precedent for European control of the continent. In total, some 12 million slaves were shipped to the New World as part of the slave trade. The slave trade was a relatively constant factor in European life before the French Revolution.`
+            }
+        ]
+    },
     thirtyYearsWar: {
         name: `Thirty Years' War`,
         startYear: 1618,
