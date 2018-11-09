@@ -1,5 +1,6 @@
 let sidebarEventOpen = false;
 let sidebarEvents = [];
+let filter = 'all';
 
 // Map initialization
 const map = L.map('map', {
@@ -48,6 +49,11 @@ const goBack = function () {
         element.addEventListener('click', () => {
             goToEvent(element.innerHTML);
         });
+    });
+    const filterSelect = document.getElementById('filter');
+    filterSelect.addEventListener('change', () => {
+        filter = filterSelect.options[filterSelect.selectedIndex].value;
+        console.log(filter);
     });
     map.flyTo([52.516278, 13.377683], 4);
 };
