@@ -83,15 +83,4 @@ for (let eventName in events) {
     sidebarEvents.push(event);
 }
 
-function updateMap(criteria) {
-    for (let eventName in events) {
-        let event = events[eventName];
-        if (criteria(event.category)) {
-            event.marker.addTo(map);
-        } else {
-            event.marker.removeFrom(map);
-        }
-    }
-}
-
 goBack();
