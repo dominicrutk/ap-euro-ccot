@@ -1,3 +1,10 @@
+// WARNING
+//
+// This program was written in two late nights.
+// This code is the gold standard for spaghetti
+// code. It should not be replicated in any way.
+//
+
 let sidebarEventOpen = false;
 let sidebarEvents = [];
 let filter = 'all';
