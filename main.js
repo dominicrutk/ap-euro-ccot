@@ -74,10 +74,25 @@ const goBack = function (flyToEurope) {
         <option value="17th" ${filter === '17th' ? 'selected' : ''}>17th Century</option>
         <option value="18th" ${filter === '18th' ? 'selected' : ''}>18th Century</option>
     </select></p>`;
+    let tempEventsList = [];
     for (let event of sidebarEvents) {
         if (passesFilter(event)) {
-            eventsList += `<button class="event-list-item">${event.title}</button>`;
+            tempEventsList.push(event);
         }
+    }
+    tempEventsList.sort((a, b) => {
+        if (a.startYear !== b.startYear) {
+            return a.startYear - b.startYear;
+        } else if (a.endYear !== b.endYear) {
+            return a.endYear - b.endYear;
+        } else {
+            if (a.name < b.name) return -1;
+            if (a.name === b.name) return 0;
+            if (a.name > b.name) return 1;
+        }
+    });
+    for (let event of tempEventsList) {
+        eventsList += `<button class="event-list-item">${event.title}</button>`;
     }
     document.getElementById('event-description').innerHTML = eventsList;
     document.querySelectorAll('#event-description > button.event-list-item').forEach(element => {
