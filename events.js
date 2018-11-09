@@ -18,6 +18,25 @@ const events = {
             }
         ]
     },
+    statueOfDavid: {
+        name: 'Michelangelo Sculpts David',
+        startYear: 1501,
+        endYear: 1504,
+        latitude: 43.783333,
+        longitude: 11.25,
+        category: 'change',
+        description: [
+            {
+                type: 'p',
+                text: `From 1501 to 1504, Renaissance artist Michelangelo sculpted one of the most famous pieces of Renaissance art. <em>David</em> depicts the nude Biblical hero David. It is one of the best examples of Renaissance art because its subject is derived from a Biblical story. In addition, it highlights the human form. Both of these ideas where characteristics of an emerging style of art: Renaissance art.`
+            },
+            {
+                type: 'img',
+                image: './img/statueOfDavid.jpg',
+                caption: '<em>David</em> by Michelangelo is currently held at Galleria dell\'Accademia in Florence, Italy. <a href="https://en.wikipedia.org/wiki/David_(Michelangelo)">Image source</a>'
+            }
+        ]
+    },
     ninetyFiveTheses: {
         name: `Martin Luther's Ninety-five Theses`,
         startYear: 1517,
@@ -61,6 +80,25 @@ const events = {
             {
                 type: 'p',
                 text: `The transatlantic slave trade had a profound impact on the economies and social hierarchies of Europe, Africa, and the New World. In the New World, plantation economies were dependent on the slave trade. In Europe, the slave trade led to a dramatic increase in wealth which allowed for innovation and an increase in quality of life. In Africa, the slave trade set a precedent for European control of the continent. In total, some 12 million slaves were shipped to the New World as part of the slave trade. The slave trade was a relatively constant factor in European life before the French Revolution.`
+            }
+        ]
+    },
+    onTheRevolutionsOfTheHeavenlySpheres: {
+        name: 'On the Revolutions of the Heavenly Spheres',
+        startYear: 1543,
+        endYear: 1543,
+        latitude: 49.45,
+        longitude: 11.083333,
+        category: 'change',
+        description: [
+            {
+                type: 'p',
+                text: `In 1543, German mathematician and natural philosopher Nicolaus Copernicus published his seminal work: <em>On the Revolutions of the Heavenly Spheres</em>. Before its publication, the predominant theory on the structure of the universe was Ptolemy's model. It was geocentric, meaning that the Earth was positioned in the center. The publication of <em>On the Revolutions of the Heavenly Spheres</em> first introduced Copernicus's heliocentric model. Although initially, this model was not widely adopted due to resistance from religious authorities, it is similar to the currently-accepted (heliocentric) model of the universe. More importantly, the publication of this model is often cited as the beginning of the Scientific Revolution.`
+            },
+            {
+                type: 'img',
+                image: './img/geocentricVsHeliocentricModels.jpg',
+                caption: `The difference between Ptolemy's geocentric model and Copernicus's heliocentric model. <a href="https://hendrianusthe.wordpress.com/2012/06/21/heliocentric-vs-geocentric/">Image source</a>`
             }
         ]
     },
