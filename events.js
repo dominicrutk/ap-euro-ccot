@@ -83,6 +83,25 @@ const events = {
             }
         ]
     },
+    americanRevolution: {
+        name: 'American Revolution',
+        startYear: 1765,
+        endYear: 1783,
+        latitude: 39.948889,
+        longitude: -75.15,
+        category: 'change',
+        description: [
+            {
+                type: 'p',
+                text: 'The American Revolution began in 1765 after the conclusion of the Seven Years’ War. Britain was millions of pounds in debt and felt that the American colonists should foot the bill, given that they were the chief beneficiaries of the war. The colonists refused to pay without Parliamentary representation, so on July 4, 1776, the Second Continental Congress declared independence from Great Britain as the United States of America. Led by George Washington, the United States fought in the American Revolutionary War until the Treaty of Paris in 1783. Many American political ideals made their way to Europe in 1789 when the French Revolution, which was inspired by the American Revolution, began.'
+            },
+            {
+                type: 'img',
+                image: './img/unitedStates1783Map.jpg',
+                caption: 'A map of the United States in 1783, the year in which the United States vanquished Great Britain in the American Revolutionary War. <a href="https://www.pinterest.com/pin/22447698120962048/">Image source</a>'
+            }
+        ]
+    },
     pugachevsRebellion: {
         name: `Pugachev's Rebellion`,
         startYear: 1773,
