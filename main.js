@@ -20,7 +20,7 @@ const goToEvent = function (eventTitle) {
             document.getElementById('event-name').innerHTML = event.title;
             document.getElementById('event-description').innerHTML = event.parsedDescription;
             document.getElementById('back-button').addEventListener('click', goBack);
-            map.flyTo([event.latitude, event.longitude]);
+            map.flyTo([event.latitude, event.longitude], 6);
             sidebarEventOpen = true;
             break;
         }
