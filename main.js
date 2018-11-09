@@ -28,6 +28,16 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoiZG9taW5pY3J1dGtvd3NraSIsImEiOiJjam83dzNkY2EwMnY3M3FwMGE3b281MjNvIn0.6gd3c6kSnu3bd8gaQdck-Q'
 }).addTo(map);
 
+const refreshMap = function () {
+    for (let eventName in events) {
+        let event = events[eventName];
+        event.marker.removeFrom(map);
+        if (passesFilter(event)) {
+            event.marker.addTo(map);
+        }
+    }
+};
+
 const goToEvent = function (eventTitle) {
     for (let eventName in events) {
         let event = events[eventName];
@@ -71,6 +81,7 @@ const goBack = function (flyToEurope) {
     const filterSelect = document.getElementById('filter');
     filterSelect.addEventListener('change', () => {
         filter = filterSelect.options[filterSelect.selectedIndex].value;
+        refreshMap();
         goBack(false);
     });
     if (flyToEurope) {
@@ -78,7 +89,7 @@ const goBack = function (flyToEurope) {
     }
 };
 
-// Marker initialization
+// Event initialization
 for (let eventName in events) {
     let event = events[eventName];
 
@@ -96,7 +107,7 @@ for (let eventName in events) {
     }
 
     // Display marker on map
-    event.marker = L.marker([event.latitude, event.longitude]).addTo(map);
+    event.marker = L.marker([event.latitude, event.longitude]);
 
     // Display event info when marker is clicked
     event.marker.on('click', () => {
@@ -117,4 +128,5 @@ for (let eventName in events) {
     sidebarEvents.push(event);
 }
 
+refreshMap();
 goBack(true);
