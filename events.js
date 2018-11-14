@@ -182,6 +182,29 @@ const events = {
             }
         ]
     },
+    theSteamEngine: {
+        name: 'The Steam Engine',
+        startYear: 1769,
+        endYear: 1776,
+        latitude: 55.871944,
+        longitude: -4.2875,
+        category: 'change',
+        description: [
+            {
+                type: 'p',
+                text: 'In 1769, Scottish engineer James Watt patented his initial design for the steam engine. This revolutionary new technology could supply nearly limitless power without relying on human or animal labor. However, Watt was unable to make it work in practical use. In 1776, he worked with toy and button manufacturer Matthew Boulton and cannon manufacturer John Wilkinson to modify the steam engine and make it viable for practical applications.'
+            },
+            {
+                type: 'p',
+                text: 'Watt retained his patent on the steam engine until 1800, so its adoption was slow up until that point. However, soon after, it became widely adopted and its applications had no bounds. Firstly, steam engines allowed factories to become viable. Not only did this cause cities to grow as workers moved in, but it increased the quality of life by allowing for the mass production of consumer goods. Secondly, steam engines could be used in trains and steamboats. These allowed the for rapid movement of people and goods. In these respects, the development of the steam engine acted as a catalyst for the Industrial Revolution.'
+            },
+            {
+                type: 'img',
+                image: './img/steamboat.jpg',
+                caption: 'The steamboat helped to move people and mass-produced consumer goods. <a href="https://en.wikipedia.org/wiki/Steam_power_during_the_Industrial_Revolution">Image source</a>'
+            }
+        ]
+    },
     pugachevsRebellion: {
         name: `Pugachev's Rebellion`,
         startYear: 1773,
