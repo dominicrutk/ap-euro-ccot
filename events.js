@@ -163,6 +163,25 @@ const events = {
             }
         ]
     },
+    stPetersburgFounded: {
+        name: 'St. Petersburg Founded',
+        startYear: 1703,
+        endYear: 1703,
+        latitude: 59.9375,
+        longitude: 30.308611,
+        category: 'change',
+        description: [
+            {
+                type: 'p',
+                text: `In 1697, Tsar Peter the Great of Russia toured western Europe in order to copy its economic, military, and political ideas, thus bringing Russia up to speed with the rest of Europe. In particular, he liked France's centralized absolutist monarchy and sought to replicate it in Russia. Accordingly, in 1703, he built the new capital city of St. Petersburg. Located on the Baltic Sea, it gave Russia access to warm-water ports. It also improved Peter's image as an absolutist monarch, much like Versailles did for Louis XIV of France. In addition, its construction marked a turning point for Russia as it became a major European power.`
+            },
+            {
+                type: 'img',
+                image: './img/peterTheGreatPalace.jpg',
+                caption: `Tsar Peter the Great's Palace was modeled after the Palace of Versailles. <a href="https://en.wikipedia.org/wiki/History_of_Saint_Petersburg">Image source</a>`
+            }
+        ]
+    },
     americanRevolution: {
         name: 'American Revolution',
         startYear: 1765,
