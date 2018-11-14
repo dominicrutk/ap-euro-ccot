@@ -155,6 +155,11 @@ const events = {
             {
                 type: 'p',
                 text: 'In 1685, King Louis XIV of France repealed the Edict of Nantes with the Edict of Fontainebleau. Huguenots (French Protestants) lost their right to practice Protestantism without persecution from the government. They were forced to flee, and the Protestant minority that had peacefully resided in France for decades suddenly declined. Louis repealed the Edict of Nantes in the name of political unity. It was a prime example of political absolutism at work since the strong monarchy took power away from local governments and peoples.'
+            },
+            {
+                type: 'img',
+                image: './img/versailles.jpg',
+                caption: 'The Palace of Versailles was used by the Sun King, Louis XIV, to consolidate power in the monarchy by making him look powerful. <a href="http://en.chateauversailles.fr/">Image source</a>'
             }
         ]
     },
