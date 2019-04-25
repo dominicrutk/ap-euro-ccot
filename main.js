@@ -1,10 +1,3 @@
-// WARNING
-//
-// This program was written in two late nights.
-// This code is the gold standard for spaghetti
-// code. It should not be replicated in any way.
-//
-
 let sidebarEventOpen = false;
 let sidebarEvents = [];
 let filter = 'all';
@@ -32,7 +25,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoiZG9taW5pY3J1dGtvd3NraSIsImEiOiJjam83dzNkY2EwMnY3M3FwMGE3b281MjNvIn0.6gd3c6kSnu3bd8gaQdck-Q'
+    accessToken: 'pk.eyJ1IjoiZG9taW5pY3J1dGtvd3NraSIsImEiOiJjanV2dzd0a2QwNjU5NGVvMHBub3VnZzVlIn0.6EpbiGYYfhtZkC4xMwV9Xw'
 }).addTo(map);
 
 const refreshMap = function () {
